@@ -9,20 +9,15 @@ public class Reproductor {
         Cancion c2 = new Cancion("Bajo el guadual", "Café Trío", 245);
         Cancion c3 = new Cancion("Noche en Chipre", "Nevado", 185);
 
-        Playlist fav = new Playlist("Favoritas");
-        fav.agregar(c1);
-        fav.agregar(c2);
-        fav.agregar(c3);
-
         Playlist viaje = new Playlist("Viaje");
         viaje.agregar(c1);
         viaje.agregar(c2);
 
-        System.out.println(fav.eliminarArtista("Nevado"));
-        fav.mostrar();
-        viaje.mostrar();
+        Cancion c4 = new Cancion("Río Chinchiná", "Nevado", 230);
 
-        System.out.println(fav.buscar("bajo el guadual").getArtista());
-        System.out.println(fav.buscar("Lluvia en Manizales"));
+        System.out.println(viaje.agregar(c3));
+        System.out.println(viaje.agregar(c4));
+        System.out.println(Cancion.getTotalCanciones());
+        System.out.println(Playlist.MAX_CANCIONES);
     }
 }

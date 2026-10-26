@@ -3,6 +3,8 @@ package musica.modelo;
 import java.util.ArrayList;
 
 public class Playlist {
+    public static final int MAX_CANCIONES = 3;
+
     private String nombre;
     private ArrayList<Cancion> canciones;
 
@@ -12,7 +14,8 @@ public class Playlist {
     }
 
     public boolean agregar(Cancion cancion) {
-        if (cancion == null || canciones.contains(cancion)) {
+        if (cancion == null || canciones.contains(cancion)
+                || canciones.size() >= MAX_CANCIONES) {
             return false;
         }
         canciones.add(cancion);
