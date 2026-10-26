@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package musica.app;
 
 import musica.modelo.Cancion;
@@ -13,14 +9,20 @@ public class Reproductor {
         Cancion c2 = new Cancion("Bajo el guadual", "Café Trío", 245);
         Cancion c3 = new Cancion("Noche en Chipre", "Nevado", 185);
 
-        Playlist favoritas = new Playlist("Favoritas");
-        favoritas.agregar(c1);
-        favoritas.agregar(c2);
-        favoritas.agregar(c3);
+        Playlist fav = new Playlist("Favoritas");
+        fav.agregar(c1);
+        fav.agregar(c2);
+        fav.agregar(c3);
 
-        System.out.println(favoritas.agregar(c1)); // intento repetido
+        Playlist viaje = new Playlist("Viaje");
+        viaje.agregar(c1);
+        viaje.agregar(c2);
 
-        favoritas.mostrar();
-        System.out.println(favoritas.duracionTotal());
+        System.out.println(fav.eliminarArtista("Nevado"));
+        fav.mostrar();
+        viaje.mostrar();
+
+        System.out.println(fav.buscar("bajo el guadual").getArtista());
+        System.out.println(fav.buscar("Lluvia en Manizales"));
     }
 }
