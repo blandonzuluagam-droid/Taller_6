@@ -6,7 +6,7 @@ package com.mycompany.taller6;
 
 /**
  *
- * @author estuam
+ * @author User
  */
 public class Taller6 {
 

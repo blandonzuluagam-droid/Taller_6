@@ -6,8 +6,9 @@ package parqueadero.modelo;
 
 public class Puesto {
     private int numero;
-    private String placa; 
-    Puesto(int numero) { 
+    private String placa; // null si está libre
+
+    Puesto(int numero) { // sin public: solo se crea dentro del paquete
         this.numero = numero;
         this.placa = null;
     }

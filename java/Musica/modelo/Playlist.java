@@ -58,4 +58,35 @@ public class Playlist {
         }
         return eliminadas;
     }
+
+    // Reto 1: versión INCORRECTA a propósito (lanza ConcurrentModificationException)
+    public int eliminarArtistaForEach(String artista) {
+        int eliminadas = 0;
+        for (Cancion c : canciones) {
+            if (c.getArtista().equals(artista)) {
+                canciones.remove(c);
+                eliminadas++;
+            }
+        }
+        return eliminadas;
+    }
+
+    // Reto 2: devuelve null si la playlist está vacía
+    public Cancion cancionMasLarga() {
+        if (canciones.isEmpty()) {
+            return null;
+        }
+        Cancion masLarga = canciones.get(0);
+        for (Cancion c : canciones) {
+            if (c.getDuracion() > masLarga.getDuracion()) {
+                masLarga = c;
+            }
+        }
+        return masLarga;
+    }
+
+    // Reto 3: copia defensiva
+    public ArrayList<Cancion> getCanciones() {
+        return new ArrayList<>(canciones);
+    }
 }
